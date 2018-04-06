@@ -1,0 +1,221 @@
+{% extends "base.html"%}
+{% load static %}
+{% block content %}
+
+        <!-- End Header -->
+        <!-- main -->
+        <!-- main -->
+        <div class="page-container scene-main scene-main--fade_In">
+            <!-- Page Title -->
+            <div class="page_main_title mb-70px">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 text-center text-lg-left">
+                            <h4>Portfolio Three Columns</h4>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="breadcrumbs mt-10px mt-lg-0 text-center text-lg-right">
+                                <span class="first-item">
+                                    <a href="portfolio-standard-two-col.html#">Home</a>
+                                </span>
+                                <span class="separator">/</span>
+                                <span>
+                                    <a href="portfolio-standard-two-col.html#">Portfolio </a>
+                                </span>
+                                <span class="separator">/</span>
+                                <span class="last-item">Three Columns</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="container mb-60px">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul class="items_filter">
+                            <li>
+                                <span data-filter="*" class="filter_active">Show All</span>
+                            </li>
+                            <li>
+                                <span data-filter=".branding">Branding</span>
+                            </li>
+                            <li>
+                                <span data-filter=".illustration">Illustration</span>
+                            </li>
+                            <li>
+                                <span data-filter=".photography">Photography</span>
+                            </li>
+                            <li>
+                                <span data-filter=".interior">Interior</span>
+                            </li>
+                        </ul>
+                        <div class="row et-items masonry_layout mb-20px">
+                            {% for object in object_list %}
+                            <article class="col-sm-6 col-md-6 et-item illustration">
+                                <div class="et-banner">
+                                    <figure class="effect-default">
+                                        <img src="{{ object.image.url }}" alt="Sofa Picture" width="855" height="671" />
+                                        <figcaption>
+        
+                                            <a class="banner-link-cover" href="portfolio-standard-two-col.html#">View More</a>
+                                        </figcaption>
+                                    </figure>
+                                    <h5 class="banner-title mt-20px">{{ object.title }}</h5>
+                                    <p class="banner-desc">{{ object.description }}</p>
+                                </div>
+                            </article>
+                            {% endfor %}
+                            <article class="col-sm-6 col-md-6 et-item illustration">
+                                <div class="et-banner">
+                                    <figure class="effect-default">
+                                        <img src="{% static 'images/w2.jpg' %}" alt="Sofa Picture" width="855" height="671" />
+                                        <figcaption>
+                                            <a class="banner-link-cover" href="portfolio-standard-two-col.html#">View More</a>
+                                        </figcaption>
+                                    </figure>
+                                    <h5 class="banner-title mt-20px">Catalogue 2016</h5>
+                                    <p class="banner-desc">Photography & Art direction</p>
+                                </div>
+                            </article>
+                            
+        
+                            <article class="col-sm-6 col-md-6 et-item interior illustration">
+                                <div class="et-banner">
+                                    <figure class="effect-default">
+                                        <img src="{% static 'images/w4.jpg' %}" alt="Sofa Picture" width="855" height="671" />
+                                        <figcaption>
+                                            <a class="banner-link-cover" href="portfolio-standard-two-col.html#">View More</a>
+                                        </figcaption>
+                                    </figure>
+                                    <h5 class="banner-title mt-20px">Amura Sofa</h5>
+                                    <p class="banner-desc">Photography & Art direction</p>
+                                </div>
+                            </article>
+        
+                            <article class="col-sm-6 col-md-6 et-item interior branding">
+                                <div class="et-banner">
+                                    <figure class="effect-default">
+                                        <img src="{% static 'images/w7.jpg' %}" alt="Sofa Picture" width="855" height="671" />
+                                        <figcaption>
+                                            <a class="banner-link-cover" href="portfolio-standard-two-col.html#">View More</a>
+                                        </figcaption>
+                                    </figure>
+                                    <h5 class="banner-title mt-20px">ZANI Catalogue 2017</h5>
+                                    <p class="banner-desc">Photography & Art direction</p>
+                                </div>
+                            </article>
+                            <article class="col-sm-6 col-md-6 et-item interior branding">
+                                <div class="et-banner">
+                                    <figure class="effect-default">
+                                        <img src="{% static 'images/w6.jpg' %}" alt="Sofa Picture" width="855" height="671" />
+                                        <figcaption>
+                                            <a class="banner-link-cover" href="portfolio-standard-two-col.html#">View More</a>
+                                        </figcaption>
+                                    </figure>
+                                    <h5 class="banner-title mt-20px">ZANI Sofa 2017</h5>
+                                    <p class="banner-desc">Photography & Art direction</p>
+                                </div>
+                            </article>
+        
+                            <article class="col-sm-6 col-md-6 et-item interior illustration">
+                                <div class="et-banner">
+                                    <figure class="effect-default">
+                                        <img src="{% static 'images/w8.jpg'%}" alt="Sofa Picture" width="855" height="671" />
+                                        <figcaption>
+                                            <a class="banner-link-cover" href="portfolio-standard-two-col.html#">View More</a>
+                                        </figcaption>
+                                    </figure>
+                                    <h5 class="banner-title mt-20px">Amura Sofa</h5>
+                                    <p class="banner-desc">Photography & Art direction</p>
+                                </div>
+                            </article>
+                            <article class="col-sm-6 col-md-6 et-item interior branding">
+                                <div class="et-banner">
+                                    <figure class="effect-default">
+                                        <img src="{% static 'images/w9.jpg' %}" alt="Sofa Picture" width="855" height="671" />
+                                        <figcaption>
+                                            <a class="banner-link-cover" href="portfolio-standard-two-col.html#">View More</a>
+                                        </figcaption>
+                                    </figure>
+                                    <h5 class="banner-title mt-20px">ZANI Catalogue 2017</h5>
+                                    <p class="banner-desc">Photography & Art direction</p>
+                                </div>
+                            </article>
+                            <article class="col-sm-6 col-md-6 et-item interior branding">
+                                <div class="et-banner">
+                                    <figure class="effect-default">
+                                        <img src="{% static 'images/w10.jpg' %}" alt="Sofa Picture" width="855" height="671" />
+                                        <figcaption>
+                                            <a class="banner-link-cover" href="portfolio-standard-two-col.html#">View More</a>
+                                        </figcaption>
+                                    </figure>
+                                    <h5 class="banner-title mt-20px">ZANI Sofa 2017</h5>
+                                    <p class="banner-desc">Photography & Art direction</p>
+                                </div>
+                            </article>
+                            <article class="col-sm-6 col-md-6 et-item illustration">
+                                <div class="et-banner">
+                                    <figure class="effect-default">
+                                        <img src="{% static 'images/w11.jpg' %}" alt="Sofa Picture" width="855" height="671" />
+                                        <figcaption>
+                                            <a class="banner-link-cover" href="portfolio-standard-two-col.html#">View More</a>
+                                        </figcaption>
+                                    </figure>
+                                    <h5 class="banner-title mt-20px">Amura Catalogue</h5>
+                                    <p class="banner-desc">Photography & Art direction</p>
+                                </div>
+                            </article>
+                            <article class="col-sm-6 col-md-6 et-item illustration">
+                                <div class="et-banner">
+                                    <figure class="effect-default">
+                                        <img src="{% static 'images/w12.jpg' %}" alt="Sofa Picture" width="855" height="671" />
+                                        <figcaption>
+                                            <a class="banner-link-cover" href="portfolio-standard-two-col.html#">View More</a>
+                                        </figcaption>
+                                    </figure>
+                                    <h5 class="banner-title mt-20px">Catalogue 2016</h5>
+                                    <p class="banner-desc">Photography & Art direction</p>
+                                </div>
+                            </article>
+                            <article class="col-sm-6 col-md-6 et-item interior photography">
+        
+                                <div class="et-banner">
+                                    <figure class="effect-default">
+                                        <img src="{% static 'images/w13.jpg' %}" alt="Sofa Picture" width="855" height="671" />
+                                        <figcaption>
+                                            <a class="banner-link-cover" href="portfolio-standard-two-col.html#">View More</a>
+                                        </figcaption>
+                                    </figure>
+                                    <h5 class="banner-title mt-20px">Catalogue 2017</h5>
+                                    <p class="banner-desc">Photography & Art direction</p>
+                                </div>
+        
+                            </article>
+                        </div>
+                        <nav class="pagination_holder mb-0">
+                            <ul class="pagination">
+                                <li class="page-item active">
+                                    <a class="page-link" href="portfolio-standard-two-col.html#">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="portfolio-standard-two-col.html#">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="portfolio-standard-two-col.html#">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="portfolio-standard-two-col.html#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- footer  -->
+            
+        <!-- End main -->
+{% endblock %}

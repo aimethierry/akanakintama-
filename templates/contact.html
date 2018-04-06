@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <!-- End Header -->
+    <!-- main -->
+    <div class="page-container scene-main scene-main--fade_In">
+        <!-- Page Title -->
+        <div class="bg-img-9 py-200px text-center mb-80px">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="text-white h1-large py-md-20px">Contact us</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact us  -->
+        <div class="pb-55px">
+            <div class="container">
+                <div class="row mb-20px">
+                    <div class="col-lg-5 mb-40px">
+                        <h4 class="mb-15px">Say Hello</h4>
+                        <p>Lorem ipsum quis bibendum auct or de suis erestopius proin qual de suis erestopius liqueenean sollicituin.
+                            Oratio pertinax, id his aliquam habemus tractatos. </p>
+                        <p class="lead">B 425, 100 Down Streat Avenue,
+                            <br> New York City, NY 1001</p>
+                        <p class="lead">Hello@energeticthemes.com
+                            <br> + 08455-3354-202</p>
+                    </div>
+                    <div class="col-lg-6 offset-lg-1">
+                        <form id="contact-form" data-toggle="validator" role="form" class="form-fields-bg-transparent" method="post" action="http://www.energeticthemes.com/templates/umda/contact.php"
+                            novalidate="true">
+                            <div class="row mb-0">
+                                <div class="col-sm-6 col-xs-12">
+                                    <div class="form-group mb-30px">
+                                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Your Name *" required="required" data-error="Your Name is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-xs-12">
+                                    <div class="form-group mb-30px">
+                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Your email *" required="required" data-error="Valid email is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row mb-15px">
+                                <div class="form-group col-md-12">
+                                    <div class="form-group mb-0">
+                                        <textarea id="form_message" name="message" class="form-control" placeholder="Your Message *" rows="7" required="required"
+                                            data-error="Please,leave us a message."></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-xs-12 align-left">
+                                    <button type="submit" class="btn btn-dark rounded-0">Submit</button>
+                                </div>
+                            </div>
+                            <div class="loading-spinner"></div>
+                            <div class="messages mt-20px"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
