@@ -26,7 +26,7 @@ SECRET_KEY = '*p@(15e#9cj(-@s^f(^fc(6wdai6g@8z)o(&6%%_1b&zi-b_=n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'wwww.akanakintama.com', 'akanakintama.herokuapp.com']
+ALLOWED_HOSTS = ['*', 'wwww.akanakintama.com', 'akanakintama.herokuapp.com', 'akanakintama.com' ]
 
 
 # Application definition
