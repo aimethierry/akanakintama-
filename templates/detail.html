@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- main -->
+<div class="page-container scene-main scene-main--fade_In">
+    <!-- Blog post -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="post_img">
+                    <img src="{{ object.image.url }}" alt="Card image cap">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mb-65px">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 mt-10px">
+                <div class="blog_posts stander_blog_single_post">
+                    <article>
+                        <h3 class="post_title">
+                            <a href="blog-single-post.html">{{ object.title }}</a>
+                        </h3>
+                        <div class="post_meta_top">
+                        
+                        <div class="post_content">
+                            <p>
+                                {{ object.text }}
+                            </p>
+
+
+                            <div class="row">
+                                <div class="col-md-7">
+                                   
+                                    <p> 
+                                        {{ object.text }}
+                                        </p>
+                                </div>
+                               
+                            </div>
+                            
+                        </div>
+                        <div class="post_meta_bottom my-30px">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6 text-center text-lg-left mb-10px mb-lg-0">
+                                    <ul class="blog-post-tags">
+                                        <li>
+                                            <a href="blog-single-post.html#" rel="tag">Branding</a>
+                                        </li>
+                                        <li>
+                                            <a href="blog-single-post.html#" rel="tag">Photography</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 text-center text-lg-right">
+                                    <a class="post_read_more_btn mr-2" href="blog-single-post.html#">
+                                        <i class="far fa-long-arrow-left fa-lg mr-2" aria-hidden="true"></i> Previous Post </a>
+                                    <a class="post_read_more_btn ml-2" href="blog-single-post.html#">Next Post
+                                        <i class="far fa-long-arrow-right fa-lg ml-1" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="separator-line"></div>
+                    </article>
+                    
+
+
+
+
+                        <h5 class="comment-reply-title mb-4">Leave a comment</h5>
+
+                        <form class="form-fields-bg-transparent">
+                            <div class="form-row  mb-15px">
+                                <div class="form-group col-md-12">
+                                    <textarea rows="8" name="comment" class="form-control validate-required" placeholder="Your Comment"></textarea>
+                                </div>
+                            </div>
+                            <div class="row mb-15px">
+                                <div class="form-group col-md-4">
+                                    <input id="name" type="text" class="form-control validate-required" placeholder="Your name">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input id="email" type="email" name="Email" class="form-control validate-required validate-email" placeholder="Your email">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" id="website" name="website" class="form-control" placeholder="Your website">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12 col-xs-12">
+                                    <button type="submit" class="btn btn-dark rounded-0">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

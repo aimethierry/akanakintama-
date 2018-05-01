@@ -14,6 +14,14 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER =  'akanakintamaange@gmail.com'
+EMAIL_HOST_PASSWORD = 'ifak@kimi'
+EMAIL_PORT = 587
+
+
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 

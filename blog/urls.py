@@ -17,7 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-from app.views import HomeView, BlogView, ContactView, AboutView, BlogCreate
+from app.views import HomeView, BlogView,  AboutView, BlogCreate, BlogDetail
 from django.contrib.auth import views as auth_views
 from app import views
 
@@ -25,12 +25,14 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', HomeView.as_view(template_name="home.html")),
     url(r'blog/$', BlogView.as_view(template_name="blog.html")),
-    url(r'contact/$', ContactView.as_view(template_name="contact.html")),
+    url(r'contact/$', views.contact, name="contact"),
     url(r'about/$', AboutView.as_view(template_name="about.html")),
     url(r'^login/$', auth_views.login, {'template_name': 'app/login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
     url(r'^dashboard/$', views.dashboard, name="dashboard"),
     url(r'^blog/create/$', BlogCreate.as_view(), name="create"),
+     url(r'^blog/(?P<pk>\d+)/$', BlogDetail.as_view(), name='order_detail'),
+
 ]
 
 if  settings.DEBUG:
