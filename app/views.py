@@ -6,6 +6,7 @@ from django.views.generic.edit import CreateView
 from .forms import BlogForm, ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.views.generic.detail import DetailView
+from django.views.generic.edit import UpdateView, DeleteView
 
 class HomeView(TemplateView):
     template_name = "home.html"
@@ -54,3 +55,21 @@ class BlogCreate(CreateView):
 class BlogDetail(DetailView):
     model = Blog
     template_name = 'detail.html'
+
+
+class BlogList(ListView):
+    model = Blog
+    paginate_by = 4
+    template_name = "dashboard-blog.html"
+
+
+class BlogEdit(UpdateView):
+    model = Blog
+    template_name = "editblog.html"
+    form_class = BlogForm
+
+
+class BlogDelete(DeleteView):
+    model = Blog
+    success_url = '/dashboard/list/'
+    template_name = "delete.html"
