@@ -25,8 +25,11 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', HomeView.as_view(template_name="home.html")),
     url(r'blog/$', BlogView.as_view(template_name="blog.html")),
-   
     url(r'contact/$', views.contact, name="contact"),
+
+    url(r'try/$', views.post, name="try"),
+
+
     url(r'about/$', AboutView.as_view(template_name="about.html")),
     url(r'^login/$', auth_views.login, {'template_name': 'app/login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
@@ -38,7 +41,7 @@ urlpatterns = [
     url(r'^detail/(?P<pk>\d+)/$', BlogEdit.as_view(), name='order_detail'),
     url(r'^delete/(?P<pk>\d+)/$', BlogDelete.as_view(), name='order_detail'),
 
-
+   
 
 ]
 

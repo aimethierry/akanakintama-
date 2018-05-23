@@ -1,5 +1,6 @@
 from django import forms
 from .models import Blog
+from newapp.models import Post, Image
 
 
 class ContactForm(forms.Form):
@@ -38,5 +39,8 @@ class BlogForm(forms.ModelForm):
             'title',
             "text",
             "image",
-
         ]
+
+
+
+
