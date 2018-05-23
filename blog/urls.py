@@ -27,7 +27,7 @@ urlpatterns = [
     url(r'blog/$', BlogView.as_view(template_name="blog.html")),
     url(r'contact/$', views.contact, name="contact"),
 
-    url(r'try/$', views.post, name="try"),
+    # url(r'try/$', views.post, name="try"),
 
 
     url(r'about/$', AboutView.as_view(template_name="about.html")),
