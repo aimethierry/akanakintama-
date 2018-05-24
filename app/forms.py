@@ -39,6 +39,9 @@ class BlogForm(forms.ModelForm):
             'title',
             "text",
             "image",
+            "image1",
+            "image2",
+            "image3",
         ]
 
 

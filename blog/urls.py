@@ -19,12 +19,18 @@ from django.conf import settings
 from django.conf.urls.static import static
 from app.views import HomeView, BlogView,  AboutView, BlogCreate, BlogDetail, BlogList, BlogEdit, BlogDelete
 from django.contrib.auth import views as auth_views
+# from app import views
+
 from app import views
+
+from newapp.views import BasicUploadView
+from newapp import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', HomeView.as_view(template_name="home.html")),
     url(r'blog/$', BlogView.as_view(template_name="blog.html")),
+
     url(r'contact/$', views.contact, name="contact"),
 
     # url(r'try/$', views.post, name="try"),
@@ -35,13 +41,17 @@ urlpatterns = [
     url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
     url(r'^dashboard/$', views.dashboard, name="dashboard"),
     url(r'^blog/create/$', BlogCreate.as_view(), name="create"),
-     url(r'^blog/(?P<pk>\d+)/$', BlogDetail.as_view(), name='order_detail'),
+    url(r'^blog/(?P<pk>\d+)/$', BlogDetail.as_view(), name='order_detail'),
+
+    url(r'^add/(?P<pk>\d+)/$',  views.add_coment,  name='order_detail'),
 
     url(r'^dashboard/list/$', BlogList.as_view(template_name="Listblog.html")),
     url(r'^detail/(?P<pk>\d+)/$', BlogEdit.as_view(), name='order_detail'),
     url(r'^delete/(?P<pk>\d+)/$', BlogDelete.as_view(), name='order_detail'),
 
-   
+   url(r'^basic-upload/$', BasicUploadView.as_view(), name='basic_upload'),
+
+   url(r'^form/$', views.form, name="form")
 
 ]
 
