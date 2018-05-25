@@ -119,7 +119,7 @@ def post(request):
                              "Yeeew, check it out on the home page!")
             return HttpResponseRedirect("/")
         else:
-            print postForm.errors, formset.errors
+            return HttpResponse("this is an error")
     else:
         postForm = PostForm()
         formset = ImageFormSet(queryset=Images.objects.none())
@@ -136,6 +136,8 @@ def dashboard(request):
 
 
 def add_coment(request, pk):
+
+    
    post= get_object_or_404(Blog, pk=pk)
    if request.method == 'POST':
        form = CommentForm(request.POST)
