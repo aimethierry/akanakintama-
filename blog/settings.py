@@ -16,8 +16,8 @@ import os
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER =  'akanakintamaange@gmail.com'
-EMAIL_HOST_PASSWORD = 'ifak@kimi'
+EMAIL_HOST_USER =  'akanakintamablog@gmail.com'
+EMAIL_HOST_PASSWORD = 'ifak@kim'
 EMAIL_PORT = 587
 
 

@@ -11,6 +11,8 @@ from newapp.models import Image, Post
 from newapp.forms import ImageForm, PostForm
 from django.forms import modelform_factory
 from django.http import JsonResponse
+from newapp.forms import CommentForm
+from django.views.generic import View
 
 
 class HomeView(TemplateView):
@@ -45,6 +47,33 @@ class BlogCreate(CreateView):
 class BlogDetail(DetailView):
     model = Blog
     template_name = 'detail.html'
+    form_class = CommentForm
+    
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            form.save
+            return HttpResponse('/success/')
+        return render(request, self.template_name, {'form': form})
+
+
+
+class FormView(DetailView):
+    form_class = CommentForm
+    template_name = 'detail.html'
+
+    def get(self, request, *args, **kwargs):
+        form = self.form_class()
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            form.save
+            return HttpResponse('/success/')
+
+        return render(request, self.template_name, {'form': form})
+
 
 
 class BlogList(ListView):

@@ -1,7 +1,7 @@
-from django.shortcuts import render, HttpResponse, get_object_or_404
+from django.shortcuts import render, HttpResponse, get_object_or_404, redirect
 from django.http import JsonResponse
 from django.views.generic import View
-
+from django.core.mail import send_mail, BadHeaderError
 from .forms import ImageForm, PostForm
 from app.forms import BlogForm, ContactForm
 from .models import Image
@@ -12,7 +12,6 @@ from django.views.generic.edit import FormView
 from django.template import RequestContext
 from django.forms import modelformset_factory
 from .forms import CommentForm
-
 
 def contact(request):
     if request.method == 'GET':
@@ -25,7 +24,7 @@ def contact(request):
            
             message = form.cleaned_data['message']
             try:
-                send_mail(subject, message, Email, ['akanakintamaange@gmail.com'])
+                send_mail(subject, message, Email, ['akantakintamablog@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('contact')
@@ -136,16 +135,14 @@ def dashboard(request):
 
 
 def add_coment(request, pk):
-
-    
    post= get_object_or_404(Blog, pk=pk)
    if request.method == 'POST':
        form = CommentForm(request.POST)
        if form.is_valid():
           comment = form.save(commit=False)
-          comment.post= post
+          comment.post = post
           comment.save()
-          return redirect('post_detail', slug=post.slug)
+          return HttpResponse("done")
    else:
        form = CommentForm()
-   return render(request, 'detail.html', {'form':form})
+   return render(request, 'detail.html', {'form':form, 'post': post })

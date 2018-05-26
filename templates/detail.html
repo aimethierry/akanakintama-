@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="post_img">
-                    <img src="{{ object.image.url }}" alt="Card image cap">
+                    <img src="{{ post.image.url }}" alt="Card image cap">
                 </div>
             </div>
         </div>
@@ -22,13 +22,13 @@
                 <div class="blog_posts stander_blog_single_post">
                     <article>
                         <h3 class="post_title">
-                            <a href="blog-single-post.html">{{ object.title }}</a>
+                            <a href="blog-single-post.html">{{ post.title }}</a>
                         </h3>
                         <div class="post_meta_top">
                         
                         <div class="post_content">
                             <p>
-                                {{ object.text }}
+                                {{ post.text }}
                             </p>                
                         </div>
                         </div>
@@ -38,7 +38,7 @@
 
                         <div class="col-md-12">
                             <div class="post_img">
-                                <img src="{{ object.image1.url }}" alt="Card image cap">
+                                <img src="{{ post.image1.url }}" alt="Card image cap">
                             </div>
                         </div>
 
@@ -46,9 +46,19 @@
 
                         <div class="col-md-12">
                             <div class="post_img">
-                                <img src="{{ object.image2.url }}" alt="Card image cap">
+                                <img src="{{ post.image2.url }}" alt="Card image cap">
                             </div>
                         </div>
+
+
+                        <div class="col-md-12">
+                            <div class="post_img">
+                                <img src="{{ post.image3.url }}" alt="Card image cap">
+                            </div>
+                        </div>
+
+
+
 
 
                         <div class="post_meta_bottom my-30px">
@@ -70,25 +80,26 @@
                         <h3>All Coment </h3>
                         <hr>
 
+                        {% for comment in post.comment_set.all %}
                         <div>
                             <p>
-                                {{ object.text }}
+                                 {{ comment.text | linebreaks }}
                             </p>
 
                             <div style="flex-direction:row; justify-content:space-between; margin-top:50px">
                                 <p>
-                                   {{ object.name }}
+                                   {{ commet.name }}
                                 </p>
 
-                            <p>
-                                email
-                            </p>
+                         {{ comment.name }}
                                 
                             </div>
                         </div>
 
                     </div>
-                   
+
+                    <hr />
+                   {% endfor %}
 
 
                         <h5 class="comment-reply-title mb-4">Leave a comment</h5>

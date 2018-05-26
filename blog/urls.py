@@ -17,7 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-from app.views import HomeView, BlogView,  AboutView, BlogCreate, BlogDetail, BlogList, BlogEdit, BlogDelete
+from app.views import HomeView, BlogView,  FormView, AboutView, BlogCreate, BlogDetail, BlogList, BlogEdit, BlogDelete
 from django.contrib.auth import views as auth_views
 # from app import views
 
@@ -42,6 +42,9 @@ urlpatterns = [
     url(r'^dashboard/$', views.dashboard, name="dashboard"),
     url(r'^blog/create/$', BlogCreate.as_view(), name="create"),
     url(r'^blog/(?P<pk>\d+)/$', BlogDetail.as_view(), name='order_detail'),
+
+    url(r'^abcd/(?P<pk>\d+)/$', FormView.as_view(), name='order_detail'),
+    url(r'^formview/$', FormView.as_view(), name='order_detail'),
 
     url(r'^add/(?P<pk>\d+)/$',  views.add_coment,  name='order_detail'),
 

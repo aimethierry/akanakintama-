@@ -15,7 +15,7 @@ class Blog(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Blog, related_name='cooments', null=True, blank=True)
+    post = models.ForeignKey(Blog, null=True, blank=True)
     name = models.CharField(max_length=140)
     email = models.CharField(max_length=140)
     text = models.TextField(blank=True, null=True)
